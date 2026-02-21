@@ -56,7 +56,7 @@ class TransformerEncoderLayer(tf.keras.layers.Layer):
         self.dense = tf.keras.layers.Dense(embed_dim, activation="relu")
     
 
-    def call(self, x, training):
+    def call(self, x, training=False):
         x = self.layer_norm_1(x)
         x = self.dense(x)
 
@@ -120,7 +120,7 @@ class TransformerDecoderLayer(tf.keras.layers.Layer):
         self.dropout_2 = tf.keras.layers.Dropout(0.5)
     
 
-    def call(self, input_ids, encoder_output, training, mask=None):
+    def call(self, input_ids, encoder_output, training=False, mask=None):
         embeddings = self.embedding(input_ids)
 
         combined_mask = None
