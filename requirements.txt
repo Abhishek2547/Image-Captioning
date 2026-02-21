@@ -1,5 +1,4 @@
-numpy<2.0.0
-pandas==1.5.3
+pandas
 Pillow
 requests
 streamlit==1.54.0
